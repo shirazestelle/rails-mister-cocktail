@@ -1,17 +1,25 @@
-<h1>Mister Cocktail</h1>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1502819126416-d387f86d47a1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=09f8419d4dfe16155bb399f0e7ea2069&auto=format&fit=crop&w=1489&q=80');">
+  <div class="banner-content">
+    <h1>Mister Cocktail</h1>
+    <p>Take a look at our cocktail list</p>
+    <%= link_to "Add a new cocktail", new_cocktail_path, class:"ghost-button" %>
+  </div>
+</div>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <ul>
-        <% @cocktails.each do |cocktail| %>
-          <li><%= link_to cocktail.name, cocktail_path(cocktail)  %></li>
-        <% end %>
-      </ul>
-        <%= link_to new_cocktail_path do %>
-          <i class="fa fa-plus">Add a new cocktail</i>
-        <% end %>
-    </div>
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo %>');">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2><%= cocktail.name %></h2>
+          </div>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/shirazestelle">
+          <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 

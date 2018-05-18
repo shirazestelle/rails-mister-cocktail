@@ -1,0 +1,15 @@
+.ghost-button {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+}
+
+.ghost-button:hover {
+  color: white;
+  background: rgba(0,0,0,0);
+}
